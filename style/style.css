@@ -28,3 +28,15 @@
     overflow: hidden;
     margin: 50px auto 0 auto;
 }
+
+@media only screen and (max-width: 650px) {
+    .tartalom{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .card{
+        margin: 5px;
+        width: 60%;
+    }
+
+  }

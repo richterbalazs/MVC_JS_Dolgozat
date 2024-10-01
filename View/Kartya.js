@@ -10,6 +10,7 @@ export default class Kartya{
         this.kepOsszeallit();
         this.kattintottElem = $(".card:last-child");
         this.kosarba = $(".kosarba:last-child")
+        this.kattintasEsemeny();
     }
 
     kepOsszeallit(){
@@ -28,15 +29,15 @@ export default class Kartya{
         this.kosGomb.on("click", () => {
           const e = new CustomEvent("kosarba", { detail: this.#index });
           window.dispatchEvent(e);
-          console.log("kattintás")
+          console.log("Kosárba téve")
         });
       }
-
-    esemenykezelo(){
+      
+    kattintasEsemeny(){
         this.kattintottElem.on("click", ()=>{
-            const e = new CustomEvent("kattintas", {detail:this.#objektumAdat});
+            const e = new CustomEvent("kattintas", {detail:this.#index});
             window.dispatchEvent(e);
-            console.log("kattintás");
+            console.log("Sikeres kattintás");
         })
     }
 }
