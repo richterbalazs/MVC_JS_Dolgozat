@@ -1,18 +1,18 @@
-import Model from "../Model/Model";
-import View from "../View/View";
-import { zeneLista } from "../Model/adat.js";
+import Model from "../Model/Model.js";
+import View from "../View/View.js";
+
 
 export default class Controller {
     constructor(){
-        this.#adatTer = $(".adatok");
+        this.taroloELEM = $(".tartalom");
         this.model = new Model;
-        new View(this.model.getList(), this.adatok)
+        new View(this.model.getList(), this.taroloELEM)
         this.#esemenyKezelo()
     }
 
-    esemenyKezelo(){
+    #esemenyKezelo(){
         $(window).on("kattintas",(event) =>{
-            new View(this.model.getList(), this.adatTer);
+            new View(this.model.getList(), this.taroloELEM);
         })
     }
 }

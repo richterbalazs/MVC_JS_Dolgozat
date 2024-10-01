@@ -3,14 +3,19 @@
 }
 
 .card {
-    background-color: black;
+    margin: auto;
+    text-align: center;
+}
+
+.kepek {
+    width: 150px;
+    height: 150px;
 }
 
 #box {
     float: left;
     width: 100px;
     height: 100px;
-    border: 1px solid black;
     font-size: 85px;
     text-align: center;
     cursor: pointer;

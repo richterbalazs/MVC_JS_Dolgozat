@@ -2,16 +2,16 @@ export const zeneLista = [
     {
         eloado: "Post Malone",
         cim: "Motley Crew",
-        kep: "kepek/motleycrew.png"
+        kep: "kepek/motleycrew.avif"
     },
     {
         eloado: "Post Malone & 21 Savage",
         cim: "Rockstar",
-        kep: "kepek/rockstar.png"
+        kep: "kepek/rockstar.avif"
     },
     {
         eloado: "Linkin Park",
         cim: "Emptiness Machine",
-        kep: "kepek/linkinpark.jfif"
+        kep: "kepek/linkinpark.avif"
     }
 ]

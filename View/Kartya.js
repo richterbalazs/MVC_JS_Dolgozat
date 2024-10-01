@@ -1,36 +1,42 @@
-export default class Kartya {
-    #allapot;
-    #index;
+export default class Kartya{
+    #objektumAdat;
+    #index
     #szuloElem;
 
-    constructor(allapot, index, szuloElem) {
-        this.#allapot = allapot;
+    constructor(objektum, index, szuloElem){
+        this.#objektumAdat = objektum;
         this.#index = index;
-        this.#szuloElem = szuloElem;
-        this.kiir();
-        this.gombElem = $(".card:last")
-        this.#kosarba();
-        this.#kattintasEsemeny();
+        this.szuloElem = szuloElem;
+        this.kepOsszeallit();
+        this.kattintottElem = $(".card:last-child");
+        this.kosarba = $(".kosarba:last-child")
     }
 
-    kiir(){
-        this.#szuloElem.append(`
-        <div class="card col-lg-3" id="box">
-        <p class="card-text"></p>
-        <div><button id="${i}" class="kosarba">Kosárba</button></div>
+    kepOsszeallit(){
+        this.szuloElem.append(`
+        <div class="card col-3 col-md-4">
+        <div class="card-body">
+            <h1 class="card-text">${this.#objektumAdat.eloado}</h1>
+            <h3 class="card-title">${this.#objektumAdat.cim}</h3>
+            <div class="card-body"><img src="${this.#objektumAdat.kep}"class="kepek" ></div>
+            <button type="button" class="btn btn-success">Kosárba</button>
+        </div>
         </div>`)
-    };
-
-    #kosarba(){
-        if(this.#allapot) {
-            
-        }
     }
 
-    #kattintasEsemeny(){
-        this.gombElem.on("click", () =>{
-            const e = new CustomEvent("kattintas", { detail: this.#index});
-            window.dispatchEvent(e);
+    kosarbaRak() {
+        this.kosGomb.on("click", () => {
+          const e = new CustomEvent("kosarba", { detail: this.#index });
+          window.dispatchEvent(e);
+          console.log("kattintás")
         });
+      }
+
+    esemenykezelo(){
+        this.kattintottElem.on("click", ()=>{
+            const e = new CustomEvent("kattintas", {detail:this.#objektumAdat});
+            window.dispatchEvent(e);
+            console.log("kattintás");
+        })
     }
 }
