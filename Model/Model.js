@@ -3,6 +3,7 @@ import { zeneLista } from "./adat.js";
 export default class Model {
     #lista = [];
     #index;
+    #kosarlista = [];
     #db
 
     constructor(){
